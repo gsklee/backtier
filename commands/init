@@ -1,0 +1,11 @@
+#!/usr/bin/env bash
+
+# $ npm run init
+# ==============
+#
+# 1. Install required Node.js global packages
+#
+# 2. Install required Node.js local packages
+
+npm install -g npm-check-updates babel-eslint semistandard
+npm install
