@@ -1,0 +1,12 @@
+# http://git-scm.com/docs/gitignore
+
+# Non-Source Code
+
+output
+
+# System Files
+
+node_modules
+*.log
+.tmp
+.DS_Store

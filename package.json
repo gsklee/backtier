@@ -1,0 +1,41 @@
+{
+  "name": "",
+  "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "repository": {
+    "type": "git",
+    "url": ""
+  },
+  "scripts": {
+    "init": "./commands/init",
+    "update": "./commands/update",
+    "preinstall": "npm cache clean",
+    "precommit": "npm test",
+    "test": "./commands/test",
+    "start": "./commands/start"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.3.14",
+    "bound-native-methods": "^0.1.6",
+    "express": "^4.13.3"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.3.17",
+    "babel-preset-es2015": "^6.3.13",
+    "babel-preset-stage-0": "^6.3.13",
+    "husky": "^0.10.1"
+  },
+  "engines": {
+    "node": ">=5.2.0"
+  },
+  "babel": {
+    "presets": [
+      "es2015",
+      "stage-0"
+    ]
+  },
+  "semistandard": {
+    "parser": "babel-eslint"
+  }
+}
