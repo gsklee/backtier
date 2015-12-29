@@ -9,3 +9,5 @@
 
 npm install -g npm-check-updates babel-eslint semistandard
 npm install
+
+"$(dirname "$0")/babel-hook"
