@@ -15,10 +15,10 @@ cli.command('config', 'Configures this project.')
      prompt(
        [{
          name: 'name',
-         message: 'Enter the package name: '
+         message: 'Enter package name: '
        }, {
          name: 'description',
-         message: 'Enter the package description: '
+         message: 'Enter package description: '
        }, {
          name: 'url',
          message: 'Enter the URL of the repository: '
