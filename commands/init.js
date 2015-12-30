@@ -6,7 +6,7 @@ import JSONFilePlus from 'json-file-plus';
 
 const cli = Vorpal();
 
-cli.command('init', 'Initializes this project.')
+cli.command('config', 'Configures this project.')
    .action(function (args, callback) {
      const {log, prompt} = this;
 
@@ -40,9 +40,9 @@ cli.command('init', 'Initializes this project.')
          try {
            await file.save(callback);
 
-           log('Success!');
+           log('Configuration was successfully saved.');
          } catch (error) {
-           log('Error!', error);
+           log(`Error while saving the configuration! ${error}`);
          }
 
          log();
@@ -50,4 +50,4 @@ cli.command('init', 'Initializes this project.')
      );
    });
 
-cli.delimiter('backtier>').show().exec('init');
+cli.delimiter('backtier>').show().exec('config');
