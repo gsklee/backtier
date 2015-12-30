@@ -23,9 +23,7 @@
     "bound-native-methods": "^0.1.6"
   },
   "devDependencies": {
-    "husky": "^0.10.2",
-    "vorpal": "^1.5.5",
-    "json-file-plus": "^3.2.0"
+    "husky": "^0.10.2"
   },
   "engines": {
     "node": ">=4.0.0"

@@ -3,4 +3,8 @@
 # npm install -g npm-check-updates babel-eslint semistandard
 # npm install
 
+npm install vorpal json-file-plus
+
 "$(dirname "$0")/babel-hook"
+
+npm uninstall vorpal json-file-plus
