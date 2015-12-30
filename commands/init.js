@@ -24,6 +24,9 @@ cli.command('config', 'Configures this project.')
          message: 'Enter author information: ',
          default: `${gitconfig.user.name} <${gitconfig.user.email}>`
        }, {
+         name: 'license',
+         message: 'Enter license information: '
+       }, {
          name: 'description',
          message: 'Enter package description: '
        }, {
