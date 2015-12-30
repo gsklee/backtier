@@ -27,6 +27,9 @@ cli.command('config', 'Configures this project.')
          name: 'description',
          message: 'Enter package description: '
        }, {
+         name: 'keywords',
+         message: 'Enter package keywords (comma-separated): '
+       }, {
          name: 'url',
          message: 'Enter the URL of the repository: '
        }, {
@@ -35,10 +38,11 @@ cli.command('config', 'Configures this project.')
          message: 'Is the project private?'
        }],
 
-       async ({url, ...answers}) => {
+       async ({keywords, url, ...answers}) => {
          const file = await JSONFilePlus(path.join(process.cwd(), 'package.json'));
 
          file.set(answers::assign({
+           keywords: keywords.split(/[ ,]+/),
            repository: {url}
          }));
 
