@@ -38,7 +38,7 @@ cli.command('config', 'Configures this project.')
          log();
 
          try {
-           await file.save(callback);
+           await file.save();
 
            log('Configuration was successfully saved.');
          } catch (error) {
@@ -46,6 +46,8 @@ cli.command('config', 'Configures this project.')
          }
 
          log();
+
+         cli.ui.cancel();
        }
      );
    });
