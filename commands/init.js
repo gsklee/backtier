@@ -1,14 +1,17 @@
+import fs from 'fs';
 import path from 'path';
 
 import {assign} from 'bound-native-methods/object';
 import Vorpal from 'vorpal';
 import JSONFilePlus from 'json-file-plus';
+import INI from 'ini';
 
 const cli = Vorpal();
 
 cli.command('config', 'Configures this project.')
-   .action(function (args, callback) {
+   .action(function () {
      const {log, prompt} = this;
+     const gitconfig = INI.parse(fs.readFileSync(path.join(process.env.HOME, '.gitconfig'), 'utf-8'));
 
      log();
 
@@ -16,6 +19,10 @@ cli.command('config', 'Configures this project.')
        [{
          name: 'name',
          message: 'Enter package name: '
+       }, {
+         name: 'author',
+         message: 'Enter author information: ',
+         default: `${gitconfig.user.name} <${gitconfig.user.email}>`
        }, {
          name: 'description',
          message: 'Enter package description: '
