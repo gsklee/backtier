@@ -45,7 +45,7 @@ cli.command('config', 'Configures this project.')
          const file = await JSONFilePlus(path.join(process.cwd(), 'package.json'));
 
          file.set(answers::assign({
-           keywords: keywords.split(/[ ,]+/),
+           keywords: keywords ? keywords.split(/[ ,]+/) : [],
            repository: {url}
          }));
 
