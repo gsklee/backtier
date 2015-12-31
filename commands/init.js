@@ -39,6 +39,11 @@ cli.command('config', 'Configures this project.')
          type: 'confirm',
          name: 'private',
          message: 'Is the project private?'
+       }, {
+         type: 'confirm',
+         name: 'preferGlobal',
+         message: 'Should the project be installed globally?',
+         default: false
        }],
 
        async ({keywords, url, ...answers}) => {

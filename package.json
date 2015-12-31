@@ -1,6 +1,7 @@
 {
   "name": "",
   "private": true,
+  "preferGlobal": false,
   "version": "0.0.0",
   "author": "",
   "license": "",
