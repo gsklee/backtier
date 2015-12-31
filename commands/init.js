@@ -21,11 +21,12 @@ cli.command('config', 'Configures this project.')
          message: 'Enter package name: '
        }, {
          name: 'author',
-         message: 'Enter author information: ',
+         message: `Enter author information (or press enter for the default):`,
          default: `${gitconfig.user.name} <${gitconfig.user.email}>`
        }, {
          name: 'license',
-         message: 'Enter license information: '
+         message: 'Enter license information (or press enter for MIT): ',
+         default: 'MIT'
        }, {
          name: 'description',
          message: 'Enter package description: '
@@ -36,12 +37,12 @@ cli.command('config', 'Configures this project.')
          name: 'url',
          message: 'Enter the URL of the repository: '
        }, {
-         type: 'confirm',
          name: 'private',
+         type: 'confirm',
          message: 'Is the project private?'
        }, {
-         type: 'confirm',
          name: 'preferGlobal',
+         type: 'confirm',
          message: 'Should the project be installed globally?',
          default: false
        }],
