@@ -1,10 +1,21 @@
 #!/usr/bin/env bash
 
-npm uninstall -g npm-check-updates babel-eslint semistandard
-npm install -g npm-check-updates babel-eslint semistandard
+magenta=$(tput setaf 5)
+bold=$(tput bold)
+underline=$(tput smul)
+normal=$(tput sgr0)
 
-npm install
+printf "${magenta}${bold}${underline}Phase I: Configure Project${normal}\n\n"
 
 npm install vorpal json-file-plus ini
 "$(dirname "$0")/babel-hook"
 npm uninstall vorpal json-file-plus ini
+
+printf "${magenta}${bold}${underline}Phase II: Install Global Dependencies${normal}\n\n"
+
+npm uninstall -g npm-check-updates babel-eslint semistandard
+npm install -g npm-check-updates babel-eslint semistandard
+
+printf "${magenta}${bold}${underline}Phase III: Install Local Dependencies${normal}\n\n"
+
+npm install
